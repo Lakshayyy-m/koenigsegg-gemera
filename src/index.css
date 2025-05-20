@@ -15,11 +15,11 @@ body {
 
 @font-face {
   font-family: "Koenigsegg";
-  src: url("../public/assets/fonts/Neographik\ MT\ Std\ Regular.otf")
+  src: url("/assets/fonts/Neographik\ MT\ Std\ Regular.otf")
     format("opentype");
 }
 
 @font-face {
   font-family: "Gemera";
-  src: url("../public/assets/fonts/GinzaDisplayInline-Oblique.ttf");
+  src: url("/assets/fonts/GinzaDisplayInline-Oblique.ttf");
 }

@@ -1,12 +1,11 @@
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import Scene from "./Components/Scene";
-import { Loader, OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import { Suspense, useRef, useEffect, useState } from "react";
+import { Loader, PerspectiveCamera } from "@react-three/drei";
+import { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useControls } from "leva";
 import StartScreenContent from "./Components/StartScreenContent";
 
 gsap.registerPlugin(ScrollTrigger);

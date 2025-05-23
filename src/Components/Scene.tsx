@@ -17,10 +17,9 @@ const Scene = forwardRef<THREE.Group, SceneProps>(
     const directionLightRef = useRef<THREE.DirectionalLight>(null);
     const { setRegisterScrollTrigger } = props;
     useEffect(() => {
-      if (!ref?.current) return;
-      // console.log(ref?.current);
+      if (!ref) return;
       setRegisterScrollTrigger(true);
-    }, []);
+    }, [ref, setRegisterScrollTrigger]);
 
     useGSAP(() => {
       if (!cameraRef.current) return;

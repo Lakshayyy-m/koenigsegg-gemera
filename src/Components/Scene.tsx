@@ -2,7 +2,6 @@ import { forwardRef, useEffect, useRef } from "react";
 import Koenigsegg from "./Koenigsegg";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { Circle } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 
@@ -10,13 +9,13 @@ type SceneProps = {
   cameraRef: React.RefObject<THREE.PerspectiveCamera | null>;
   position?: [number, number, number];
   setRegisterScrollTrigger: React.Dispatch<React.SetStateAction<boolean>>;
+  increaseLight?: boolean;
 } & React.ComponentPropsWithRef<"group">;
 
 const Scene = forwardRef<THREE.Group, SceneProps>(
   ({ cameraRef, ...props }, ref) => {
     const directionLightRef = useRef<THREE.DirectionalLight>(null);
     const { setRegisterScrollTrigger } = props;
-
     useEffect(() => {
       if (!ref?.current) return;
       // console.log(ref?.current);
@@ -50,14 +49,6 @@ const Scene = forwardRef<THREE.Group, SceneProps>(
           position={[5, 5, 5]}
           intensity={0}
         />
-        <Circle
-          rotation={[-Math.PI / 2, 0, 0]}
-          receiveShadow
-          args={[1.4]}
-          position={[0, 0, 0]}
-        >
-          <meshStandardMaterial color={"#141414"} roughness={0.9} />
-        </Circle>
         <Koenigsegg />
       </group>
     );

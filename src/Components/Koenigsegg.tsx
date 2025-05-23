@@ -8,7 +8,6 @@ import { gsap } from "gsap";
 const Koenigsegg = forwardRef((props, ref) => {
   const { scene } = useGLTF("/assets/koenigsegg.glb");
   const lightRef = useRef<THREE.SpotLight>(null);
-
   useGSAP(() => {
     gsap.to(lightRef.current!.position, {
       duration: 5,
@@ -32,7 +31,7 @@ const Koenigsegg = forwardRef((props, ref) => {
         target={scene}
         color={0x1a17c4}
       />
-      <ambientLight intensity={0} />
+
       <primitive object={scene} castShadow />
     </group>
   );
